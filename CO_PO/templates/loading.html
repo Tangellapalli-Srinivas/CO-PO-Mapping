@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading...</title>
+    <link rel="stylesheet" href="/static/notifications.css">
+</head>
+<body data-route={{ask}}>
+    {% include "header.html" %}
+
+    <main>
+        <h1 id="heading">{{title}}</h1>
+        <i>Estimated time: {{estimated}}</i>
+        <img src="/static/loading.svg" width="100px" height="100px">
+    </main>
+
+    <footer>
+        <article class="flags"></article>
+    </footer>
+
+    <script type="text/javascript" src="/static/notifications.js" type="application/javascript"></script>
+    <script type="text/javascript" src="/static/loading.js" type="application/javascript"></script>
+</body>
+</html>

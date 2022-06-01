@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CO-PO Mapping</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body data-results="{{results}}" data-from-stdout="{{from_stdout}}" data-busy="{{is_busy}}">
+  {% include "header.html" %}
+    
+    <main>
+      <!-- TAB CONTROLLERS -->
+      <section class="ui-tabgroup">
+        <input class="ui-tab1" type="radio" id="tgroup_a_tab1" name="tgroup_a" checked />
+        <input class="ui-tab2" type="radio" id="tgroup_a_tab2" name="tgroup_a" />
+        <input class="ui-tab3" type="radio" id="tgroup_a_tab3" name="tgroup_a" />
+        <article class="ui-tabs">
+          <label class="ui-tab1" for="tgroup_a_tab1">Input</label>
+          <label class="ui-tab2" for="tgroup_a_tab2">How To</label>
+          <label class="ui-tab3" for="tgroup_a_tab3">More</label>
+        </article>
+
+        <div class="ui-panels">
+          <div class="ui-tab1">
+            <form enctype="multipart/form-data" id="input">
+              <section class="wrapper">
+                <div class="content">
+                  <article>
+                    <input type="file" id="raw" name="raw" accept=".xlsx" required>
+                    <sub><small><i>Make Sure that the file<sub>.xlsx</sub> follows the pattern mentioned in <a href="/static/Sample.xlsx">here</a></i></small></sub>
+                  </article>
+                  
+                </div>
+                <div class="badge">
+                  <div class="badge__content"><span>1</span></div>
+              </div>
+              </section>
+              
+              <section class="wrapper">
+                <div class="content">
+                  <article>
+                    <input type="number" min="1" value="1" id="exams" name="exams" max="100">
+                    <sub><small><i>Enter the Number of Exams Conducted:<sub>>=1</sub></i></small></sub>
+                  </article>
+                </div>
+                <div class="badge blue">
+                  <div class="badge__content"><span>2</span></div>
+              </div>
+              </section>
+              
+              <section class="wrapper">
+                <div class="content">
+                  <article>
+                    <button class="orange-butt btn-7"><span>Submit</span></button>
+                    <sub><small><i>Asks matlab to analyze data</i></small></sub>
+                  </article>
+                </div>
+                <div class="badge red">
+                  <div class="badge__content"><span>3</span></div>
+              </div>
+              </section>
+              
+            </form>
+          </div>
+          <div class="ui-tab2">
+            <section class="wrapper">
+              <div class="content">
+                <article>
+                  <a class="orange-butt btn-7" href="/static/About.docx"><span>Download Document</span></a>
+                  <sub><small><i>Understanding the CO-PO Mapping Process</i></small></sub>
+                </article>
+              </div>
+              <div class="badge">
+                <div class="badge__content"><span>1</span></div>
+            </div>
+            </section>
+            
+            <section class="wrapper">
+              <div class="content">
+                <article>
+                  <button class="orange-butt btn-7"><span>Sample Document</span></button>
+                  <sub><small><i>Sample Excel format for providing Input</i></small></sub>
+                </article>
+              </div>
+              <div class="badge blue">
+                <div class="badge__content"><span>2</span></div>
+            </div>
+            </section>
+            
+            <section class="wrapper">
+              <div class="content">
+                <article>
+                  <button class="orange-butt btn-7"><span></span></button>
+                  <sub><small><i>Presentation</i></small></sub>
+                </article>
+              </div>
+              <div class="badge red">
+                <div class="badge__content"><span>3</span></div>
+            </div>
+            </section>
+          </div>
+          <div class="ui-tab3">
+            <h3 class="cool">About</h3>
+            <div>
+                <h2 class="cool">Fast and Generalized CO-PO Mapping Tool for
+                  Outcome based Education</h2>
+                <h3 class="cool">Dr. Tangellapalli Srinivas</h3>
+                Associate Professor, Department of Mechanical Engineering
+                Dr. B.R. Ambedkar National Institute of Technology Jalandhar, Punjab, India - 144011
+              </div>
+          </div>
+          
+        </div>
+      </section>
+      
+    </main>
+    <footer>
+      <div class='modal' id="wait-until">
+        <div class='content'>
+          <h6><u>Wait until you see this message, After closing this figure, Webpage auto refreshes for you</u></h6>
+          <img src="/static/wait_until.jpg" alt="wait until you see this figure from matlab" width="470px" height="300px">
+        </div>
+      </div>
+      <article class="flags"></article>
+    </footer>
+    <script type="text/javascript" src="/static/notifications.js" type="application/javascript"></script>
+    <script type="text/javascript" src="/static/dynamic.js" type="application/javascript"></script>
+</script>
+</body>
+</html>
