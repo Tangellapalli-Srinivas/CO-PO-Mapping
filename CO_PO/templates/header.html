@@ -1,12 +1,14 @@
 <header class="lifted">
+  {% set settings = auto_update(True)%}
     <article>
         <h1 title="Mapping Course Outcome with the Program Outcome" class="cool">CO-PO Mapping</h1>
     </article>
     <article>
-      <input class="switch" type="checkbox" id="switch" /><label for="switch"></label>
+      <input class="switch" type="checkbox" id="switch" {% if settings.get("auto_update", False) %}checked{% endif %}/><label for="switch"></label>
       <sup><small>Auto Update</small></sup>
     </article>
     <div>
+          <a class="mini-butt" title="App Support URL, You can raise issues here." href="https://github.com/Tangellapalli-Srinivas/CO-PO-Mapping/issues" target="_blank"><img src="/static/github.svg"></a>
           <a id="results" class="mini-butt" title="Download Raw from prev - Session"><img src="/static/download.svg"></a>
           <button id="close" class="mini-butt" title="Close - Session"><img src="/static/shutdown.svg"></button>
           <button id="status" class="mini-butt" title="Reports Status of Matlab Engine"><img src="/static/status.svg"></button>

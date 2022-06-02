@@ -91,7 +91,6 @@ class Engine:
 
         with self.processing:
             try:
-                [_.close() for _ in self.raw]
                 self.actual_parse(file_path, int(exams))
 
                 template["status"] = "Successfully Executed your request"
@@ -102,7 +101,7 @@ class Engine:
                 template["status"] = "Please save the file as a .xlsx file and try again. Other formats are " \
                                      "not supported "
             except Exception as _:
-                template["status"] = "Failed to parse excel file due to\n" + str(_)
+                template["status"] = "Failed to parse excel file, Reason:\n" + str(_)
                 logging.exception("Failed to parse", exc_info=True)
 
         file_path.unlink()
@@ -129,6 +128,8 @@ class Engine:
         sheets = workbook.sheetnames[-(exams + 1):]
         # cot, co_po, weightage, expected = (matlab.double(_) for _ in parse_tables(4, workbook, sheets[0]))
         gc.collect()
+
+        [_.close() for _ in self.raw]
         self.raw.clear()
         self.raw.append(io.StringIO())
         self.raw.append(io.StringIO())

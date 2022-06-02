@@ -1,0 +1,176 @@
+Exam No.
+   1
+
+     2     2     2     2     2     5     5
+     1     1     1     1     1     1     1
+     1     1     1     1     1     1     1
+
+    {'MaxMarks'    }
+    {'ClassAverage'}
+    {'%Attainment' }
+
+    2.0000    2.0000    2.0000    2.0000    2.0000    5.0000    5.0000   20.0000
+    1.1860    1.6047    1.7674    1.6279    1.1395    4.5698    3.7791   15.6744
+   59.3023   80.2326   88.3721   81.3953   56.9767   91.3953   75.5814   78.3721
+
+CO1 Attainment=78.372093
+CO1 Attainment Gap=-3.372093
+CO1 Attainment Result=Target attained or exceeded. Attainment target may be enhanced next time.
+CO2 Attainment=0.000000
+CO2 Attainment Gap=75.000000
+CO2 Attainment Result=Target not attained. Improvements must be planned to increase attainment next time.
+CO3 Attainment=0.000000
+CO3 Attainment Gap=75.000000
+CO3 Attainment Result=Target not attained. Improvements must be planned to increase attainment next time.
+CO4 Attainment=0.000000
+CO4 Attainment Gap=75.000000
+CO4 Attainment Result=Target not attained. Improvements must be planned to increase attainment next time.
+OAAP=78.372093
+Overall attainment=Target attained or exceeded. Attainment target may be enhanced next time.
+Exam No.
+   2
+
+     2     2     2     2     2     5     5
+     1     1     1     1     1     1     1
+     1     1     1     4     4     2     2
+
+    {'MaxMarks'    }
+    {'ClassAverage'}
+    {'%Attainment' }
+
+    2.0000    2.0000    2.0000    2.0000    2.0000    5.0000    5.0000   20.0000
+    1.8372    0.8605    1.9302    1.8140    1.4651    4.7209    2.5814   15.2093
+   91.8605   43.0233   96.5116   90.6977   73.2558   94.4186   51.6279   76.0465
+
+CO1 Attainment=77.131783
+CO1 Attainment Gap=-2.131783
+CO1 Attainment Result=Target attained or exceeded. Attainment target may be enhanced next time.
+CO2 Attainment=73.023256
+CO2 Attainment Gap=1.976744
+CO2 Attainment Result=Target not attained. Improvements must be planned to increase attainment next time.
+CO3 Attainment=0.000000
+CO3 Attainment Gap=75.000000
+CO3 Attainment Result=Target not attained. Improvements must be planned to increase attainment next time.
+CO4 Attainment=81.976744
+CO4 Attainment Gap=-6.976744
+CO4 Attainment Result=Target attained or exceeded. Attainment target may be enhanced next time.
+OAAP=76.046512
+Overall attainment=Target attained or exceeded. Attainment target may be enhanced next time.
+Exam No.
+   3
+
+     1     1     1     1     1     1     1     1     1     1
+     1     1     1     1     1     2     2     2     1     1
+     1     1     1     1     1     2     2     2     3     3
+     0     0     0     0     0     4     4     4     0     0
+
+    {'MaxMarks'    }
+    {'ClassAverage'}
+    {'%Attainment' }
+
+    1.0000    1.0000    1.0000    1.0000    1.0000    1.0000    1.0000    1.0000    1.0000    1.0000   10.0000
+    0.8721    0.8721    0.8721    0.8721    0.8488    0.7326    0.7907    0.8721    0.5116    0.5233    7.7674
+   87.2093   87.2093   87.2093   87.2093   84.8837   73.2558   79.0698   87.2093   51.1628   52.3256   77.6744
+
+CO1 Attainment=86.744186
+CO1 Attainment Gap=-11.744186
+CO1 Attainment Result=Target attained or exceeded. Attainment target may be enhanced next time.
+CO2 Attainment=79.844961
+CO2 Attainment Gap=-4.844961
+CO2 Attainment Result=Target attained or exceeded. Attainment target may be enhanced next time.
+CO3 Attainment=51.744186
+CO3 Attainment Gap=23.255814
+CO3 Attainment Result=Target not attained. Improvements must be planned to increase attainment next time.
+CO4 Attainment=79.844961
+CO4 Attainment Gap=-4.844961
+CO4 Attainment Result=Target attained or exceeded. Attainment target may be enhanced next time.
+OAAP=77.674419
+Overall attainment=Target attained or exceeded. Attainment target may be enhanced next time.
+Exam No.
+   4
+
+     5     5     5     5    10     5     5     5     5
+     1     1     1     1     2     2     2     1     1
+     1     1     1     1     2     2     2     3     3
+     0     0     0     0     4     4     4     0     0
+
+    {'MaxMarks'    }
+    {'ClassAverage'}
+    {'%Attainment' }
+
+    5.0000    5.0000    5.0000    5.0000   10.0000    5.0000    5.0000    5.0000    5.0000   50.0000
+    2.3023    4.2326    4.1163    3.3256    7.6744    3.3953    3.2791    3.4186    4.0465   35.7907
+   46.0465   84.6512   82.3256   66.5116   76.7442   67.9070   65.5814   68.3721   80.9302   71.5814
+
+CO1 Attainment=69.883721
+CO1 Attainment Gap=5.116279
+CO1 Attainment Result=Target not attained. Improvements must be planned to increase attainment next time.
+CO2 Attainment=71.744186
+CO2 Attainment Gap=3.255814
+CO2 Attainment Result=Target not attained. Improvements must be planned to increase attainment next time.
+CO3 Attainment=74.651163
+CO3 Attainment Gap=0.348837
+CO3 Attainment Result=Target not attained. Improvements must be planned to increase attainment next time.
+CO4 Attainment=71.744186
+CO4 Attainment Gap=3.255814
+CO4 Attainment Result=Target not attained. Improvements must be planned to increase attainment next time.
+OAAP=71.581395
+Overall attainment=Target not attained. Improvements must be planned to increase attainment next time.
+Maximum marks assigned to COs in examinations=
+   20.0000    6.0000    5.0000   31.0000   20.0000   51.0000
+         0   10.0000    1.5000   11.5000   10.0000   21.5000
+         0         0    2.0000    2.0000   10.0000   12.0000
+         0    4.0000    1.5000    5.5000   10.0000   15.5000
+   20.0000   20.0000   10.0000   50.0000   50.0000  100.0000
+
+Actual marks obtained to COS in the examinations=
+   15.6744    4.6279    4.3372   24.6395   13.9767   38.6163
+         0    7.3023    1.1977    8.5000    7.1744   15.6744
+         0         0    1.0349    1.0349    7.4651    8.5000
+         0    3.2791    1.1977    4.4767    7.1744   11.6512
+   15.6744   15.2093    7.7674   38.6512   35.7907   74.4419
+
+CO attainment, % in examinations=
+   78.3721   77.1318   86.7442   79.4824   69.8837   75.7182
+         0   73.0233   79.8450   73.9130   71.7442   72.9043
+         0         0   51.7442   51.7442   74.6512   70.8333
+         0   81.9767   79.8450   81.3953   71.7442   75.1688
+   78.3721   76.0465   77.6744   77.3023   71.5814   74.4419
+
+Total CO Attainment=
+   75.7182   95.0800   77.6544
+   72.9043   95.0800   75.1218
+   70.8333   97.5000   73.5000
+   75.1688   95.0000   77.1519
+
+CO attainment gap=
+   75.0000   77.6544   -2.6544
+   75.0000   75.1218   -0.1218
+   75.0000   73.5000    1.5000
+   75.0000   77.1519   -2.1519
+
+CO1 Attainment Result=Target attained or exceeded. Attainment target may be enhanced next time.
+CO2 Attainment Result=Target attained or exceeded. Attainment target may be enhanced next time.
+CO3 Attainment Result=Target not attained. Improvements must be planned to increase attainment next time.
+CO4 Attainment Result=Target attained or exceeded. Attainment target may be enhanced next time.
+PO Mapping strength=
+    3.0000         0         0         0         0         0         0         0         0         0         0         0    2.0000         0
+         0    3.0000         0         0         0         0         0         0         0         0         0         0    2.0000         0
+    1.0000         0    3.0000         0         0         0         0         0         0         0         0         0    3.0000         0
+    1.0000         0    3.0000         0         0         0    2.0000         0         0         0         0         0    2.0000         0
+    1.6667    3.0000    3.0000         0         0         0    2.0000         0         0         0         0         0    2.2500         0
+
+Actual PO Attainment level=
+    2.3296         0         0         0         0         0         0         0         0         0         0         0    1.5531         0
+         0    2.2537         0         0         0         0         0         0         0         0         0         0    1.5024         0
+    0.7350         0    2.2050         0         0         0         0         0         0         0         0         0    2.2050         0
+    0.7715         0    2.3146         0         0         0    1.5430         0         0         0         0         0    1.5430         0
+    1.2787    2.2537    2.2598         0         0         0    1.5430         0         0         0         0         0    1.7009         0
+
+Actual PO Attainment,%=
+   77.6544         0         0         0         0         0         0         0         0         0         0         0   51.7696         0
+         0   75.1218         0         0         0         0         0         0         0         0         0         0   50.0812         0
+   24.5000         0   73.5000         0         0         0         0         0         0         0         0         0   73.5000         0
+   25.7173         0   77.1519         0         0         0   51.4346         0         0         0         0         0   51.4346         0
+   42.6239   75.1218   75.3260         0         0         0   51.4346         0         0         0         0         0   56.6964         0
+

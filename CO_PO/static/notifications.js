@@ -126,7 +126,7 @@ class StatusCheck{
     if(!confirm("Are you sure you want to close your session?")){
       return;
     }
-    
+
     if(!route){
       return new StatusCheck("/close-session", () => new Error("You can close this window"));
     }
@@ -139,3 +139,25 @@ class StatusCheck{
 document.getElementById("status").addEventListener('click', () => new StatusCheck("/get-status"));
 document.getElementById("restart").addEventListener("click", () => new StatusCheck("/get-status", function(_){ StatusCheck.closeSession("/restart", _)}));
 document.getElementById("close").addEventListener("click", () => new StatusCheck("/get-status", function(_){ StatusCheck.closeSession("", _)}));
+document.getElementById("switch").addEventListener("input", function(){
+  new StatusCheck(`/auto-updates?auto-update=${this.checked ? "1" : "0"}`, () => new Info("Response Saved"), "Failed to contact Server");
+});
+
+
+function createBlob(){
+  const results = document.getElementById("results");
+  if(!document.body.dataset.results){
+    results.style.display = 'none';
+    return 
+  }
+
+  results.style.display = 'block';
+  const raw = new Blob([document.body.dataset.results], {type: "text/plain"});
+  results.href = window.URL.createObjectURL(raw);
+  const isOK = Boolean(document.body.dataset.fromStdout);
+  
+  results.download = isOK ? "results.txt" : "error.txt";
+  results.style.border = isOK ? "1px solid green" : "1px solid red";
+}
+
+createBlob();

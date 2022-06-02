@@ -4,7 +4,7 @@ import logging
 from werkzeug.utils import secure_filename
 from waitress import serve
 from CO_PO.misc import get_free_port, close_main_thread_in_good_way, \
-    open_local_url, save_path, get_paths, gen_template
+    open_local_url, save_path, get_paths, gen_template, auto_update, ask_for_update
 from CO_PO.matlab_related import Engine
 
 logging.basicConfig(
@@ -47,6 +47,7 @@ class Server(Engine):
 
     def main_route(self):
         status = self.get_status()
+
         logging.info(status)
 
         if status["force_refresh"]:
@@ -56,21 +57,22 @@ class Server(Engine):
                 message=status["status"],
                 ask="/start-engine",
                 estimated="(.5-3) min",
-                show_image=False
+                show_image=False,
+                auto_update=auto_update
             )
 
         return render_template(
             "index.html",
             from_stdout="1" if self.passed else "0",
             results=self.pure(),
-            is_busy="1" if status["ask_refresh"] else ""
+            is_busy="1" if status["ask_refresh"] else "",
+            auto_update=auto_update
         )
 
     def start_engine(self):
         template = gen_template(
             message="Matlab Engine was already started, Refresh the Page once...", force_refresh=True
         )
-
         try:
             loaded = super().start_engine()
             template["passed"] = True
@@ -130,6 +132,14 @@ class Server(Engine):
         return "1"
 
 
+@app.route("/auto-updates", methods=["GET"])
+def auto():
+    asked = bool(int(request.args.get("auto-update", "0")))
+    logging.info("Asked to turn auto-update to %s", "on" if asked else "off")
+    auto_update(auto_update=asked)
+    return gen_template(True, "changed")
+
+
 if __name__ == "__main__":
     server = Server(get_free_port())
     open_local_url(server.port)
@@ -144,4 +154,6 @@ if __name__ == "__main__":
     app.add_url_rule("/wait-for-processing", view_func=server.wait_for_processing)
 
     serve(app, port=server.port)
+    ask_for_update()
+
 

@@ -43,18 +43,9 @@ function Start-PythonScript{
 }
 
 
-function Get-UserName{
-    # format: <host-name>\<user-name>
-    # host-name has alphanumeric, hyphen only
-    
-    # Most secured way: https://stackoverflow.com/a/29955210/12318454
-    $user = [System.Security.Principal.WindowsIdentity]::GetCurrent().Name
-    return $user.SubString($user.indexOf("\") + 1) 
-}
-
 function Get-Update{
         
-    $response = Invoke-RestMethod -Uri "https://api.github.com/repos/RahulARanger/MAL-Remainder/releases/latest" -Method "GET"
+    $response = Invoke-RestMethod -Uri "https://api.github.com/repos/Tangellapalli-Srinivas/CO-PO-Mapping/releases/latest" -Method "GET"
     $update_it = $response.tag_name -ne $Matches.1
 
     if (-not $update_it){
@@ -70,8 +61,6 @@ function Get-Update{
 
     Start-Process -FilePath $temp -Wait
     Remove-Item -Path $temp
-
-    
 }
 
 
@@ -93,7 +82,7 @@ switch($mode){
     # Checking for the updates
     2{
         Write-Debug "Checking for any updates";
-        ((Get-Content -Path (Join-Path -Path $MAL -ChildPath "__init__.py") -Raw) -match '^__version__\s?=\s?"(.*)"') |
+        ((Get-Content -Path (Join-Path -Path $CoPo -ChildPath "__init__.py") -Raw) -match '^__version__\s?=\s?"(.*)"') |
             Get-Update
     }
 

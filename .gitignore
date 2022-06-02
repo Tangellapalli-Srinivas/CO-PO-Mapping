@@ -13,3 +13,5 @@ Project Related / *
 Python/*
 *.svg
 *.exe
+*.pfx
+get_cert.ps1

@@ -1,23 +1,3 @@
-
-function createBlob(){
-  const results = document.getElementById("results");
-  if(!document.body.dataset.results){
-    results.style.display = 'none';
-    return 
-  }
-
-  results.style.display = 'block';
-  const raw = new Blob([document.body.dataset.results], {type: "text/plain"});
-  results.href = window.URL.createObjectURL(raw);
-  const isOK = Boolean(document.body.dataset.fromStdout);
-  
-  results.download = isOK ? "results.txt" : "error.txt";
-  results.style.border = isOK ? "1px solid green" : "1px solid red";
-}
-
-createBlob();
-
-
 function openModal(wait){
   document.getElementById("wait-until").classList.toggle("modal-open");
   if(wait){

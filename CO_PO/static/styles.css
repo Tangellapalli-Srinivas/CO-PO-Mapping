@@ -172,6 +172,7 @@ section.ui-tabgroup > article.ui-tabs > [class^="ui-tab"] {
   color: #b9c5c8;
   font-weight: bold;
   padding: 9px 15px;
+  user-select: none;
   cursor: pointer;
   border-width: 1px 1px 0px 1px;
   border-style: solid;

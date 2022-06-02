@@ -1,5 +1,5 @@
 #include "misc.iss"
-#define Version="0.9.0"
+#define Version="0.0.1"
 #define Name="CO-PO Mapping"
 #define Author="Tangellapalli Srinivas"
 #define Mx="CO-PO"
@@ -74,11 +74,11 @@ AppMutex={#Mx}
 InfoBeforeFile="README.rtf"
 
 ; Below Value is Oberserved Value
-ExtraDiskSpaceRequired=40022016
-ReserveBytes=58576896
+ExtraDiskSpaceRequired=28736046
+ReserveBytes=31330304
 
 ; Comment this line if you want to locally setup
-; SignTool=SignThis
+SignTool=SignThis
 
 
 
@@ -86,6 +86,7 @@ ReserveBytes=58576896
 Source: "{tmp}\python.zip"; DestDir: "{app}"; flags: external skipifsourcedoesntexist; Permissions: users-modify;
 Source: "{tmp}\get-pip.py"; DestDir: "{app}"; flags: external skipifsourcedoesntexist; Permissions: users-modify;
 Source: "./setup.ps1"; DestDir: "{app}"; Permissions: users-modify; Flags: deleteafterinstall;
+Source: "../gate.ps1"; DestDir: "{app}";
 Source: "../requirements.txt"; DestDir: "{app}"; Permissions: users-modify; AfterInstall: PostInstall
 
 Source: "../CO_PO\templates\*"; DestDir: "{app}/CO_PO/templates";
