@@ -96,7 +96,7 @@ class Server(Engine):
         gc.collect()
 
         close_main_thread_in_good_way(1.3)
-        return render_template("session-closed.html")
+        return "You can close this session"
 
     def submit_input(self):
         response = self.get_status()

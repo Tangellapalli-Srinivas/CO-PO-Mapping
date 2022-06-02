@@ -141,7 +141,7 @@ begin
   Ask := True;
   ImplicitExitCode := -1073741510;
   Downloaded := True;
-  DownloadPage := CreateDownloadPage('Downloading Python...', 'Downloading & Extracting Embedded python 3.8.9.zip', @OnDownloadProgress);
+  DownloadPage := CreateDownloadPage('Downloading Python...', 'Downloading & Extracting Embedded python 3.6.8.zip', @OnDownloadProgress);
   DataOutDated := False;
 end;
                                     

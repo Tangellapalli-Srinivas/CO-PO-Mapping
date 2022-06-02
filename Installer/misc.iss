@@ -53,8 +53,8 @@ begin
     if not Downloaded then
       begin 
         DownloadPage.Clear;
-        DownloadPage.Add('https://bootstrap.pypa.io/get-pip.py', 'get-pip.py', '');
-        DownloadPage.Add('https://www.python.org/ftp/python/3.8.9/python-3.8.9-embed-amd64.zip', 'python.zip', '');
+        DownloadPage.Add('https://bootstrap.pypa.io/pip/3.6/get-pip.py', 'get-pip.py', '');
+        DownloadPage.Add('https://www.python.org/ftp/python/3.6.8/python-3.6.8-embed-amd64.zip', 'python.zip', '');
         DownloadPage.Show;
         try 
           DownloadPage.Download;
