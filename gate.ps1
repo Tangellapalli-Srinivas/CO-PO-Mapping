@@ -26,7 +26,7 @@ function Get-ProjectPyPath{
     param(
         [string]$file
     )
-    return '"' + (Join-Path -Path $CoPo -ChildPath "$file.py") + '" '
+    return '"' + (Join-Path -Path $CoPo -ChildPath "$file.pyc") + '" '
 }
 
 function Start-PythonScript{
@@ -43,7 +43,7 @@ function Start-PythonScript{
 function Get-Update{
         
     $response = Invoke-RestMethod -Uri "https://api.github.com/repos/Tangellapalli-Srinivas/CO-PO-Mapping/releases/latest" -Method "GET"
-    $update_it = $response.tag_name -ne $Matches.1
+    $update_it = $response.tag_name -ne $arguments[0]
 
     if (-not $update_it){
         return
@@ -64,7 +64,7 @@ function Get-Update{
 switch($mode){
     # for running the application
     0{
-        Start-PythonScript 
+        Start-Process $executable -WindowStyle Maximized -WorkingDirectory $ScriptPath -ArgumentList ('"' + (Join-Path -Path $CoPo -ChildPath "test_trial.pyc") + '" ')
     }
 
     # Checking if all the instances are closed

@@ -15,4 +15,5 @@ Python/*
 *.exe
 *.pfx
 get_cert.ps1
-test.py
+test*.py
+*.pyc

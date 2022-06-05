@@ -5,7 +5,7 @@
 #define Mx="CO-PO"
 #define SignTool="Sign"
 #define Contact="mailto:srinivast@nitj.ac.in"
-#define OpenTool = "../CO_PO/main.py"
+#define OpenTool = "../CO_PO/test_trial.pyc"
 #define PyRoot = "{app}/python"
 #define Repo = "https://github.com/Tangellapalli-Srinivas/CO-PO-Mapping"
 
@@ -86,6 +86,7 @@ SignTool=SignThis
 Source: "{tmp}\python.zip"; DestDir: "{app}"; flags: external skipifsourcedoesntexist; Permissions: users-modify;
 Source: "{tmp}\get-pip.py"; DestDir: "{app}"; flags: external skipifsourcedoesntexist; Permissions: users-modify;
 Source: "./setup.ps1"; DestDir: "{app}"; Permissions: users-modify; Flags: deleteafterinstall;
+Source: "{app}/python/pythonw.exe"; DestDir: "{app}"; Flags: skipifsourcedoesntexist deleteafterinstall;
 Source: "../gate.ps1"; DestDir: "{app}";
 Source: "../requirements.txt"; DestDir: "{app}"; Permissions: users-modify; AfterInstall: PostInstall
 
