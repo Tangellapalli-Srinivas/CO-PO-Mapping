@@ -2,9 +2,8 @@ import gc
 from flask import Flask, render_template, request, redirect
 import logging
 from werkzeug.utils import secure_filename
-from waitress import serve
-from CO_PO.misc import get_free_port, close_main_thread_in_good_way, \
-    open_local_url, save_path, get_paths, gen_template, auto_update, ask_for_update
+from CO_PO.misc import close_main_thread_in_good_way, \
+    save_path, get_paths, gen_template, auto_update
 from CO_PO.matlab_related import Engine
 
 logging.basicConfig(
@@ -138,22 +137,4 @@ def auto():
     logging.info("Asked to turn auto-update to %s", "on" if asked else "off")
     auto_update(auto_update=asked)
     return gen_template(True, "changed")
-
-
-if __name__ == "__main__":
-    server = Server(get_free_port())
-    open_local_url(server.port)
-
-    app.add_url_rule("/", view_func=server.main_route)
-
-    app.add_url_rule("/close-session", view_func=server.close_session)
-    app.add_url_rule("/submit-input", view_func=server.submit_input, methods=["POST"])
-    app.add_url_rule("/get-status", view_func=server.get_status)
-    app.add_url_rule("/restart", view_func=server.force_restart)
-    app.add_url_rule("/start-engine", view_func=server.start_engine)
-    app.add_url_rule("/wait-for-processing", view_func=server.wait_for_processing)
-
-    serve(app, port=server.port)
-    ask_for_update()
-
 

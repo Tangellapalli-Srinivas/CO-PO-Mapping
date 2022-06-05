@@ -89,5 +89,5 @@ def ask_for_update():
 
     logging.info("asking for the update...")
     return subprocess.Popen(
-        ["powershell.exe", "-file", pathlib.Path(__file__).parent.parent / "gate.ps1", "-mode 2"]
+        ["powershell.exe", "-file", str(pathlib.Path(__file__).parent.parent / "gate.ps1"), "-mode 2"]
     )

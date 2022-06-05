@@ -2,7 +2,8 @@
 
 Flexible computational tool for the Outcome based Education
 
-
-## More
-
-This application is a [Flask](https://github.com/pallets/flask) application, you would see 
+## Pre-Requisite
+ 
+* Matlab R2018a / R2018b / R2019a / R2019b R2020a / R2020b
+* Windows
+ 

@@ -15,9 +15,6 @@ $PythonPath = Join-Path -Path $ScriptPath -ChildPath "Python";
 $executable = Join-Path -Path $PythonPath -ChildPath "python.exe";
 $CoPo = Join-Path -Path $ScriptPath -ChildPath "CO_PO"
 
-Write-Output $ScriptPath
-Write-Output $PythonPath
-Write-Output $CoPo
 
 function Get-RunningProjects{
     $Pythons = Join-Path -Path $PythonPath -ChildPath "*";
@@ -81,9 +78,8 @@ switch($mode){
 
     # Checking for the updates
     2{
-        Write-Debug "Checking for any updates";
-        ((Get-Content -Path (Join-Path -Path $CoPo -ChildPath "__init__.py") -Raw) -match '^__version__\s?=\s?"(.*)"') |
-            Get-Update
+        Write-Debug "Updating";
+        Get-Update
     }
 
     3{
@@ -103,6 +99,16 @@ switch($mode){
         }
 
         Write-Debug "Completed..."
+    }
+
+    4{
+        Add-Type -AssemblyName PresentationCore,PresentationFramework
+        $ButtonType = [System.Windows.MessageBoxButton]::Ok
+        $MessageIcon = [System.Windows.MessageBoxImage]::Warning
+        $MessageBody = $arguments[0]
+        $MessageTitle = "Application cannot be started"
+        [console]::beep(2000,500)
+        [System.Windows.MessageBox]::Show($MessageBody,$MessageTitle,$ButtonType,$MessageIcon)
     }
 }
 
