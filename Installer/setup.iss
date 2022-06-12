@@ -1,13 +1,14 @@
-#include "misc.iss"
-#define Version="0.0.1"
+#define Version="0.0.2"
 #define Name="CO-PO Mapping"
 #define Author="Tangellapalli Srinivas"
 #define Mx="CO-PO"
 #define SignTool="Sign"
 #define Contact="mailto:srinivast@nitj.ac.in"
+#define ProjectRoot = "{app}/CO_PO"
 #define OpenTool = "../CO_PO/test_trial.pyc"
 #define PyRoot = "{app}/python"
 #define Repo = "https://github.com/Tangellapalli-Srinivas/CO-PO-Mapping"
+#include "misc.iss"
 
 [Setup]
 ; Basic Meta
@@ -131,7 +132,7 @@ Name: "{group}\{#Name}"; Filename: "{#PyRoot}/python.exe"; Parameters: "{#OpenTo
 
 [Run]
 // any other than powershell.exe will trigger false positive virus test.
-Filename: "powershell.exe"; Description: "Open Application"; Parameters: "-file ""{app}\gate.ps1"" -mode 0"; WorkingDir: "{app}"; Flags: postinstall runasoriginaluser runminimized
+Filename: "powershell.exe"; Description: "Open Application"; Parameters: "-file ""{app}\gate.ps1"" -mode 0"; WorkingDir: "{app}"; Flags: postinstall runasoriginaluser runminimized; Check: IsFresh;
 
 
 [Code]

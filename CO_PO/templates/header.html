@@ -1,7 +1,7 @@
 <header class="lifted">
   {% set settings = auto_update(True)%}
     <article>
-        <h1 title="Mapping Course Outcome with the Program Outcome" class="cool">CO-PO Mapping</h1>
+        <h1 title="Mapping Course Outcome with the Program Outcome" class="cool">CO-PO Mapping<sub><small><small><small>{{version}}</small></small></small></sub></h1>
     </article>
     <article>
       <input class="switch" type="checkbox" id="switch" {% if settings.get("auto_update", False) %}checked{% endif %}/><label for="switch"></label>

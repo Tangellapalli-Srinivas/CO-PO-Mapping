@@ -1,7 +1,10 @@
 function openModal(wait){
-  document.getElementById("wait-until").classList.toggle("modal-open");
+  document.querySelectorAll("main > section").forEach((element) => element.classList.toggle("hide"));
   if(wait){
-    new StatusCheck("/wait-for-processing", () => openModal(false));
+    new StatusCheck("/wait-for-processing", () => {
+      openModal(false);
+      window.location = "/";
+    });
   }
 }
 
@@ -12,10 +15,10 @@ if(document.body.dataset.busy){
 
 function afterSubmit(){
   const response = JSON.parse(this.response);
-  openModal(false);
 
   if(!response.passed){
-    return new Error(response.status);
+    new Error(response.status);
+    return openModal(false);
   }
 
   new Info("Submitted Form");
@@ -33,3 +36,11 @@ document.getElementById("input").addEventListener("submit", function(e){
   openModal(false);
   new StatusCheck("/submit-input", afterSubmit, "Failed to submit input", new FormData(document.getElementById("input")));
 });
+
+document.getElementById("exams").addEventListener("input", function(){
+  new Info(`Selected ${this.value} exams`);
+})
+
+document.getElementById("raw").addEventListener("change", function(){
+  new Info(`Uploaded Excel File ${this.value}`);
+})

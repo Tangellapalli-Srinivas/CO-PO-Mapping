@@ -17,15 +17,15 @@
         <input class="ui-tab2" type="radio" id="tgroup_a_tab2" name="tgroup_a" />
         <input class="ui-tab3" type="radio" id="tgroup_a_tab3" name="tgroup_a" />
         <article class="ui-tabs">
-          <label class="ui-tab1" for="tgroup_a_tab1">Input</label>
-          <label class="ui-tab2" for="tgroup_a_tab2">How To</label>
-          <label class="ui-tab3" for="tgroup_a_tab3">More</label>
+          <label class="ui-tab1" for="tgroup_a_tab1" title="Provide the Necessary data">Input</label>
+          <label class="ui-tab2" for="tgroup_a_tab2" title="Learn how to use this application">How To</label>
+          <label class="ui-tab3" for="tgroup_a_tab3" title="About this Application">About</label>
         </article>
 
         <div class="ui-panels">
           <div class="ui-tab1">
             <form enctype="multipart/form-data" id="input">
-              <section class="wrapper">
+              <section class="wrapper" title="In this step, We upload the data file in the Excel Format(.xlsx)">
                 <div class="content">
                   <article>
                     <input type="file" id="raw" name="raw" accept=".xlsx" required>
@@ -38,7 +38,7 @@
               </div>
               </section>
               
-              <section class="wrapper">
+              <section class="wrapper" title="Select the Number of Exams conducted">
                 <div class="content">
                   <article>
                     <input type="number" min="1" value="1" id="exams" name="exams" max="100">
@@ -50,7 +50,7 @@
               </div>
               </section>
               
-              <section class="wrapper">
+              <section class="wrapper" title="Process the data given">
                 <div class="content">
                   <article>
                     <button class="orange-butt btn-7"><span>Submit</span></button>
@@ -114,15 +114,16 @@
           
         </div>
       </section>
+      <section class="hide swing-in">
+        <div>
+          <h1 class="cool">Processing your data...</h1>
+          <p>Wait until you see the figure (shown below) window from matlab</p>
+        </div>
+        <img src="/static/wait_until.jpg" alt="wait until you see this figure from matlab" height="66%" width="45%">
+      </section>
       
     </main>
     <footer>
-      <div class='modal' id="wait-until">
-        <div class='content'>
-          <h6><u>Wait until you see this message, After closing this figure, Webpage auto refreshes for you</u></h6>
-          <img src="/static/wait_until.jpg" alt="wait until you see this figure from matlab" width="470px" height="300px">
-        </div>
-      </div>
       <article class="flags"></article>
     </footer>
     <script type="text/javascript" src="/static/notifications.js" type="application/javascript"></script>

@@ -5,6 +5,7 @@ from werkzeug.utils import secure_filename
 from CO_PO.misc import close_main_thread_in_good_way, \
     save_path, get_paths, gen_template, auto_update
 from CO_PO.matlab_related import Engine
+from CO_PO import __version__
 
 logging.basicConfig(
     level=logging.INFO,
@@ -36,7 +37,7 @@ class Server(Engine):
                                  "tools present at top right corner of the header "
 
         if not template["status"]:
-            template["status"] = "Matlab Engine is running in background, You can request for any work."
+            template["status"] = "Matlab Engine is running in the background.\nYou can request for any work."
             template["ask_refresh"] = False
 
         # Rare cases for this request to have passed as False
@@ -45,27 +46,29 @@ class Server(Engine):
         return template
 
     def main_route(self):
-        status = self.get_status()
+        cell = self.get_status()
 
-        logging.info(status)
+        logging.info(cell)
 
-        if status["force_refresh"]:
+        if cell["force_refresh"]:
             return render_template(
                 "/loading.html",
                 title="Loading MatLab Engine",
-                message=status["status"],
+                message=cell["status"],
                 ask="/start-engine",
                 estimated="(.5-3) min",
                 show_image=False,
-                auto_update=auto_update
+                auto_update=auto_update,
+                version=__version__
             )
 
         return render_template(
             "index.html",
             from_stdout="1" if self.passed else "0",
             results=self.pure(),
-            is_busy="1" if status["ask_refresh"] else "",
-            auto_update=auto_update
+            is_busy="1" if cell["ask_refresh"] else "",
+            auto_update=auto_update,
+            version=__version__
         )
 
     def start_engine(self):
@@ -138,3 +141,7 @@ def auto():
     auto_update(auto_update=asked)
     return gen_template(True, "changed")
 
+
+@app.errorhandler(404)
+def not_found(_):
+    return render_template("404.html"), 404

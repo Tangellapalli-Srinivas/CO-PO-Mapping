@@ -1,46 +1,4 @@
 @import url("/static/notifications.css");
-/* Animation Thing Starts */
-
- @-webkit-keyframes swing-in-top-fwd {
-  0% {
-    -webkit-transform: rotateX(-100deg);
-            transform: rotateX(-100deg);
-    -webkit-transform-origin: top;
-            transform-origin: top;
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: rotateX(0deg);
-            transform: rotateX(0deg);
-    -webkit-transform-origin: top;
-            transform-origin: top;
-    opacity: 1;
-  }
-}
-@keyframes swing-in-top-fwd {
-  0% {
-    -webkit-transform: rotateX(-100deg);
-            transform: rotateX(-100deg);
-    -webkit-transform-origin: top;
-            transform-origin: top;
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: rotateX(0deg);
-            transform: rotateX(0deg);
-    -webkit-transform-origin: top;
-            transform-origin: top;
-    opacity: 1;
-  }
-}
-
-
-.swing-in{
-	-webkit-animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
-	        animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
-}
-/* Animation Thing Ends */
-
 
 /* Heavy Components Starts*/
 *{
@@ -65,6 +23,14 @@ section{
 main{
   align-items: stretch;
   justify-content: stretch;
+}
+
+main > section:last-child{
+  flex-grow: 1;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 6%;
 }
 
 /* Heavy Components Ends*/
@@ -483,43 +449,6 @@ a{
   color: dodgerblue;
 }
 
-
-.modal {
-  display: flex;
-  height: 1px;
-  overflow-y: auto;
-  overflow-x: hidden;
-  position: fixed;
-  
-  z-index: 1;
-  top: 49px;
-  left: 0px;
-  
-  transition: all 0.5s ease;
-  width: 0px;
-}
-
-.modal > .content {
-  font-size: 2em;
-  top: 50%;
-  color: var(--orange);
-
-  text-align: center;
-  transition: color 0.5s ease;
-  width: 100%;
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  row-gap: 10px;
-  align-items: center;
-}
-
-.modal-open {
-  height: 100%;
-  width: 100%;
-  background-color: var(--dark-black);
-  transition: width 0.5s ease, height 0.5s ease 0.5s;
-}
-.modal-open > .content {
-  transition: color 0.5s ease 0.5s;
+.hide{
+  display: none;
 }

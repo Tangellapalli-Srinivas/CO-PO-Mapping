@@ -3,27 +3,11 @@ class Notification{
     constructor(text){
       this.element = document.createElement("div");
       this.element.classList.add("flag");
-      this.attachButton(text);
+      this.element.classList.add("swing-in");
+      this.element.textContent = text;
+      this.element.addEventListener("click", this.close.bind(this));
       document.querySelector("footer > article.flags").insertAdjacentElement("beforeend", this.element);
     }
-  
-    attachButton(text){
-      const div = document.createElement("div");
-      div.textContent = text;
-  
-      const button = document.createElement("button");
-      button.classList.add("mini-butt");
-      button.title = "Close Notification";
-  
-      const image = document.createElement("img");
-      image.src = "/static/close.svg";
-  
-      button.insertAdjacentElement("afterbegin", image);
-      this.element.insertAdjacentElement("afterbegin", div);
-      this.element.insertAdjacentElement("beforeend", button);
-      button.addEventListener("click", this.close.bind(this));
-    }
-  
     close(){
       this.element.classList.add("closed");
       setTimeout(() => this.element.remove(), 1000);

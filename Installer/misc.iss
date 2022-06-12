@@ -117,3 +117,9 @@ begin
     if FileExists(ExpandConstant('{app}/gate.ps1')) then 
       ExecPSScript('gate.ps1', False, '-mode 1', Result)
 end;
+
+function IsFresh: Boolean;
+// will not ask for Run Script after Setup was successfull if the setup was for update
+begin
+  Result := not DirExists(ExpandConstant('{#ProjectRoot}'));
+end;

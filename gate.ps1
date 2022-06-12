@@ -44,11 +44,11 @@ function Get-Update{
         
     $response = Invoke-RestMethod -Uri "https://api.github.com/repos/Tangellapalli-Srinivas/CO-PO-Mapping/releases/latest" -Method "GET"
     $update_it = $response.tag_name -ne $arguments[0]
-
     if (-not $update_it){
         return
     }
 
+    Write-Output "Updating..."
 
     $download_url = $response.assets.browser_download_url
     $temp = Join-Path -Path $env:TEMP -ChildPath $response.assets.Name
@@ -78,7 +78,7 @@ switch($mode){
 
     # Checking for the updates
     2{
-        Write-Debug "Updating";
+        Write-Debug "Checking for the updates...";
         Get-Update
     }
 
