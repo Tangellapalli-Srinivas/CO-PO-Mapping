@@ -1,3 +1,7 @@
+# **NOTE**
+
+Please refer to the [Repoistory](https://github.com/RahulARanger/CO-PO-Mapping), for newer verisons. This repo is unmaintained.
+
 # CO-PO Mapping
 
 Flexible computational tool for the Outcome based Education
